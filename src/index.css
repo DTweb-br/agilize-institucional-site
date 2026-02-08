@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Inter:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 216 65% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 216 65% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 216 65% 11%;
+    --primary: 39 72% 61%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 216 65% 11%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 216 20% 96%;
+    --muted-foreground: 216 15% 40%;
+    --accent: 39 72% 95%;
+    --accent-foreground: 216 65% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 216 20% 90%;
+    --input: 216 20% 90%;
+    --ring: 39 72% 61%;
+
+    --radius: 0.75rem;
+
+    --font-sans: 'Inter', sans-serif;
+    --font-heading: 'Manrope', sans-serif;
+  }
+
+  .dark {
+    --background: 216 65% 5%;
+    --foreground: 0 0% 100%;
+    --card: 216 65% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 216 65% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 39 72% 61%;
+    --primary-foreground: 216 65% 5%;
+    --secondary: 216 65% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 216 30% 15%;
+    --muted-foreground: 216 20% 65%;
+    --accent: 216 40% 15%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 216 30% 15%;
+    --input: 216 30% 15%;
+    --ring: 39 72% 61%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+}
+
+.animate-in {
+  animation: animate-in 0.6s ease-out both;
+}
+
+@keyframes animate-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
